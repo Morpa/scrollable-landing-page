@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
+import '../../providers/page_provider.dart';
 import '../shared/custom_menu.dart';
 import '../views/about_view.dart';
 import '../views/contact_view.dart';
@@ -45,7 +47,10 @@ class HomePage extends StatelessWidget {
 class _HomeBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    final pageProvider = Provider.of<PageProvider>(context, listen: false);
+
     return PageView(
+      controller: pageProvider.scrollController,
       scrollDirection: Axis.vertical,
       children: const [
         HomeView(),
