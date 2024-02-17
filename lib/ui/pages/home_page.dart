@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../shared/custom_menu.dart';
 import '../views/about_view.dart';
 import '../views/contact_view.dart';
 import '../views/home_view.dart';
@@ -17,14 +18,10 @@ class HomePage extends StatelessWidget {
         child: Stack(
           children: [
             _HomeBody(),
-            Positioned(
+            const Positioned(
               top: 20,
               right: 20,
-              child: Container(
-                width: 150,
-                height: 50,
-                color: Colors.black,
-              ),
+              child: CustomMenu(),
             )
           ],
         ),
